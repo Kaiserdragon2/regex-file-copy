@@ -43,43 +43,43 @@ def update_explanation():
 
 # Create a tkinter window with a larger size and some basic styling
 window = tk.Tk()
-window.title("Folder Structure Copy")
-window.geometry("400x400")  # Set window size
+window.title("Regex File Copy")
+window.geometry("600x350")  # Set window size
 
 # Create a frame to contain UI elements for better organization
 frame = tk.Frame(window)
-frame.pack(padx=20, pady=20)
+frame.pack(padx=20, pady=30)
 
 # Source directory input
-source_label = tk.Label(frame, text="Source Directory:")
+source_label = tk.Label(frame, text="Source Directory:",font=("default", 12))
 source_label.grid(row=0, column=0, sticky="w")
-source_dir_entry = tk.Entry(frame, width=30)
-source_dir_entry.grid(row=0, column=1)
-source_browse_button = tk.Button(frame, text="Browse", command=browse_source_directory)
-source_browse_button.grid(row=0, column=2)
+source_dir_entry = tk.Entry(frame, width=40,font=("default",11))
+source_dir_entry.grid(row=0, column=1,pady=5,ipady=5)
+source_browse_button = tk.Button(frame, text="Browse", command=browse_source_directory,font=("default", 11))
+source_browse_button.grid(row=0, column=2,padx=10)
 
 # Destination directory input
-destination_label = tk.Label(frame, text="Destination Directory:")
+destination_label = tk.Label(frame, text="Destination Directory:",font=("default", 12))
 destination_label.grid(row=1, column=0, sticky="w")
-destination_dir_entry = tk.Entry(frame, width=30)
-destination_dir_entry.grid(row=1, column=1)
-destination_browse_button = tk.Button(frame, text="Browse", command=browse_destination_directory)
-destination_browse_button.grid(row=1, column=2)
+destination_dir_entry = tk.Entry(frame, width=40,font=("default",11))
+destination_dir_entry.grid(row=1, column=1,pady=5,ipady=5)
+destination_browse_button = tk.Button(frame, text="Browse", command=browse_destination_directory,font=("default", 11))
+destination_browse_button.grid(row=1, column=2,padx=10)
 
 # Regex pattern input
-regex_label = tk.Label(frame, text="Regex Pattern:")
+regex_label = tk.Label(frame, text="Regex Pattern:",font=("default", 12))
 regex_label.grid(row=2, column=0, sticky="w")
-regex_pattern_entry = tk.Entry(frame, width=30)
-regex_pattern_entry.grid(row=2, column=1)
+regex_pattern_entry = tk.Entry(frame, width=40,font=("default",11))
+regex_pattern_entry.grid(row=2, column=1,pady=5,ipady=5)
 
 # Checkbox to invert filtering
 invert_filtering_var = tk.BooleanVar()
 invert_filtering_var.set(False)
-invert_filtering_checkbox = tk.Checkbutton(frame, text="Invert Filtering", variable=invert_filtering_var, command=update_explanation)
+invert_filtering_checkbox = tk.Checkbutton(frame, text="Invert Filtering", variable=invert_filtering_var,font=("default", 12), command=update_explanation)
 invert_filtering_checkbox.grid(row=3, column=0, columnspan=3, pady=(10, 0), sticky="w")
 
 # Explanation label
-explanation_label = tk.Label(frame, text="", fg="blue")
+explanation_label = tk.Label(frame, text="", fg="blue",font=("default", 14))
 explanation_label.grid(row=4, column=0, columnspan=3, pady=(5, 0))
 
 # Copy button
@@ -98,7 +98,7 @@ def start_copy():
     # Set the result label text after the copy operation
     result_label.config(text="Folder structure copied with filtering.")
 
-copy_button = tk.Button(frame, text="Start Copy", command=start_copy)
+copy_button = tk.Button(frame, text="Start Copy", command=start_copy,font=("default", 16,"bold"))
 copy_button.grid(row=5, column=0, columnspan=3, pady=(20, 0))
 
 # Result label
